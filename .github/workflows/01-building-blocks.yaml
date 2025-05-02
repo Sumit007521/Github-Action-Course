@@ -4,7 +4,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  name: echo-hello
+  name: echo_hello
   runs-on: ubuntu-latest
   steps:
     - name: 'Say Hello'
