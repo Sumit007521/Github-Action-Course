@@ -3,14 +3,13 @@ on:
   - push
   - workflow_dispatch
 
-job1:
+jobs:
   name: echo-hello
   runs-on: ubuntu-latest
   steps:
     - name: 'Say Hello'
       run: echo "Hello, World!"
 
-job2:
   name: echo-goodbye
   runs-on: ubuntu-latest
   steps:
