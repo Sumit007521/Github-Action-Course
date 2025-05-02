@@ -5,18 +5,18 @@ on:
 
 job1:
   name: echo-hello
-  runs-on: ubuntu-lates
-  steps:
-    - name: 'Say Hello'
-      run: echo "Hello, World!"
+    runs-on: ubuntu-lates
+    steps:
+      - name: 'Say Hello'
+        run: echo "Hello, World!"
 
 job2:
   name: echo-goodbye
-  runs-on: ubuntu-latest
-  steps:
-    - name: 'Failed step'
-      run: |
-        echo "I will fail"
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Failed step'
+        run: |
+          echo "I will fail"
 
-    - name: 'Say goodbye'
-      run: echo "Goodbye!"
+      - name: 'Say goodbye'
+        run: echo "Goodbye!"
