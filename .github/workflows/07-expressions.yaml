@@ -15,11 +15,11 @@ jobs:
               name: ${{ inputs.debug }} Print start-up data 
               run: |
                 echo "Triggered by: ${{ github.event_name }}"      
-                echo "Branch: ${{ github.head_ref }}"
+                echo "Branch: ${{ github.ref }}"
                 echo "Commit SHA: ${{ github.sha }}"
                 echo "Runner OS: ${{ github.run_id }}"    
             
-            - if: ${{ inputs.debug == true && github.head_ref == 'main' }}    
+            - if: ${{ inputs.debug == true && github.ref == 'main' }}    
               name: ${{ inputs.debug }} Print when triggered from main
               run: echo "I was triggered from main"  
               
