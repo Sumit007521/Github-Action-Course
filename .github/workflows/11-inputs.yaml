@@ -22,7 +22,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Build
-              run: echo "Building from tag ${{ inputs.tag.choice }}"    
+              run: echo "Building from tag ${{ inputs.tag.options }}"    
               
     deploy:
         runs-on: ubuntu-latest
