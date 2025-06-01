@@ -8,12 +8,30 @@ on:
                 default: staging
 
 jobs:
-    echo:
+    echo-staging:
         runs-on: ubuntu-latest
-        environment: ${{ inputs.target-env }}  
+        environment: staging
         env:
             my-env-value: ${{ vars.MY_ENV_VALUE || 'default_value' }}   
         steps:
             - name: Echo Vars
               run: |
-                echo "Env variables ${{ env.my-env-value }}"               
+                echo "Deploy to stating..." 
+    e2e-testing:
+        needs: echo-staging
+        runs-on: ubuntu-latest
+        steps:
+            - name: E2E testing
+              run: echo "E2E Testing..."            
+    echo-prod:
+        needs: e2e-testing
+        runs-on: ubuntu-latest
+        environment: prod
+        env:
+            my-env-value: ${{ vars.MY_ENV_VALUE || 'default_value' }}   
+        steps:
+            - name: Echo Vars
+              run: |
+                echo "Deploy to prod..."
+        
+           
